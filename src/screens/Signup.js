@@ -19,7 +19,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("https://gofood-3-8rvz.onrender.com/api/createuser", {
+    const response = await fetch("https://gofood-3-3465.onrender.com/api/createuser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

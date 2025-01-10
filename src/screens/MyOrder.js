@@ -6,7 +6,7 @@ export default function MyOrder() {
   const [orderData, setOrderData] = useState({});
 
   const fetchMyOrder = async () => {
-    await fetch("https://gofood-3-8rvz.onrender.com/api/myOrderData", {
+    await fetch("https://gofood-3-3465.onrender.com/api/myOrderData", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,7 +32,7 @@ export default function MyOrder() {
 
       <div className="container">
         <div className="row">
-          {orderData !== {}
+          {orderData != {}
             ? Array(orderData).map((data) => {
                 return data.orderData
                   ? data.orderData.order_data
