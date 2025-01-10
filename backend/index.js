@@ -20,6 +20,4 @@ app.use(express.json())
 app.use('/api' , require('./routes/createUser'))
 app.use('/api' , require('./routes/displayData'))
 app.use('/api' , require('./routes/OrederData'))
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+app.listen(port)

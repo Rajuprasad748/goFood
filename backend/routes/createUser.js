@@ -18,7 +18,6 @@ router.post(
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    console.log(req.body.password)
 
     const salt = await bcrypt.genSalt(10);
     const hash = await bcrypt.hash(req.body.password, salt);
@@ -54,7 +53,6 @@ router.post(
     let email = req.body.email;
     try {
       let userData = await user.findOne({email});
-      console.log(userData)
       if (!userData) {
         return res
           .status(400)

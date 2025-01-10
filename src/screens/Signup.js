@@ -18,10 +18,7 @@ const Signup = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(JSON.stringify({name: credentials.name,
-      email: credentials.email,
-      password: credentials.password,
-      location: credentials.geolocation}),)
+
     const response = await fetch("http://localhost:5000/api/createuser", {
       method: "POST",
       headers: {
@@ -41,9 +38,7 @@ const Signup = () => {
     }
     if (newData.success) {
       navigate('/Login')
-    }
-
-    
+    }    
   };
 
   return (

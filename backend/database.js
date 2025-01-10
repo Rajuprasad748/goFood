@@ -1,22 +1,21 @@
 const mongoose = require("mongoose");
+require("dotenv").config();
 
 const mongodbConnection = async () => {
   try {
-    await mongoose.connect("mongodb://127.0.0.1:27017/mernapp");
-    console.log("Connected to MongoDB");
+    await mongoose.connect(process.env.DATABASE_URL);
 
-    const collection = mongoose.connection.db.collection("foodItems");
+    const collection = await mongoose.connection.collection("foodItems");
     const data = await collection.find({}).toArray();
+    
 
-    console.log("data:");
-
-    const foodCategory = mongoose.connection.db.collection("foodcategory");
+    const foodCategory = await mongoose.connection.collection("foodCategory");
     const catData = await foodCategory.find({}).toArray();
+    
 
     if (catData) {
       global.foodItems = data;
       global.foodCategory = catData;
-
     }
   } catch (error) {
     console.error("Error connecting to MongoDB:", error);

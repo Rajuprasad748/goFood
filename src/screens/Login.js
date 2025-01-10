@@ -27,7 +27,7 @@ const Login = () => {
     });
 
     const newData = await response.json();
-    console.log(newData)
+    
 
     if (!newData.success) {
       alert("Enter valid email or password")
